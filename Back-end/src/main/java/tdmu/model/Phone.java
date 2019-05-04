@@ -63,4 +63,5 @@ public class Phone {
     public void setPhoneRating(Set<PhoneRating> phoneRating) {
         this.phoneRating = phoneRating;
     }
+
 }

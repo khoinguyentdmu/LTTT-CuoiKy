@@ -1,10 +1,7 @@
 package tdmu.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import tdmu.model.Phone;
 import tdmu.service.RecommendationService;
 
@@ -18,7 +15,7 @@ public class RecommendationController {
 
     @CrossOrigin
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public List<Phone> getAll() {
-        return recommendationService.recommend(2L, 3);
+    public List<Phone> getAll(@RequestParam(name = "idUser") Long idUser, @RequestParam(name = "numberOfPhone") int numberOfPhone) {
+        return recommendationService.recommend(idUser, numberOfPhone);
     }
 }

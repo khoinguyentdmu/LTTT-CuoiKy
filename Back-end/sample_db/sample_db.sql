@@ -16,16 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Dumping data for table `hibernate_sequence`
---
-
-LOCK TABLES `hibernate_sequence` WRITE;
-/*!40000 ALTER TABLE `hibernate_sequence` DISABLE KEYS */;
-INSERT INTO `hibernate_sequence` VALUES (1),(1),(1);
-/*!40000 ALTER TABLE `hibernate_sequence` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Dumping data for table `phone`
 --
 
@@ -41,6 +31,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `phone_rating` WRITE;
 /*!40000 ALTER TABLE `phone_rating` DISABLE KEYS */;
+INSERT INTO `phone_rating` VALUES (2,2,11,1),(1,1,10,1),(3,5,12,1),(4,5,13,1),(5,5,14,1),(6,4,15,1),(7,5,16,1),(8,1,17,1),(9,5,18,1),(10,1,10,2),(11,2,11,2),(12,5,15,2),(13,5,16,2),(14,1,17,2),(15,5,18,2),(16,3,11,3),(17,5,12,3),(18,4,13,3),(19,3,14,3),(20,4,15,3),(21,5,16,3),(22,4,17,3),(23,5,18,3),(24,5,10,4),(25,5,11,4),(26,5,12,4),(27,0,13,4),(28,2,14,4),(29,3,15,4),(30,1,16,4),(31,4,17,4),(32,1,18,4);
 /*!40000 ALTER TABLE `phone_rating` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -63,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-04 11:18:18
+-- Dump completed on 2019-05-04 13:58:07
