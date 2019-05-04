@@ -16,6 +16,21 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `phone`
+--
+
+DROP TABLE IF EXISTS `phone`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `phone` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `price` bigint(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Dumping data for table `phone`
 --
 
@@ -26,6 +41,24 @@ INSERT INTO `phone` VALUES (10,'phone10',10),(11,'phone11',11),(12,'phone12',12)
 UNLOCK TABLES;
 
 --
+-- Table structure for table `phone_rating`
+--
+
+DROP TABLE IF EXISTS `phone_rating`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `phone_rating` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `rating` bigint(20) DEFAULT NULL,
+  `phone_id` bigint(20) DEFAULT NULL,
+  `user_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKrprs3mkarm53c42cjdwa1auvr` (`phone_id`),
+  KEY `FK5hmlc4awhlcu1i9a6iax3t8es` (`user_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Dumping data for table `phone_rating`
 --
 
@@ -34,6 +67,24 @@ LOCK TABLES `phone_rating` WRITE;
 INSERT INTO `phone_rating` VALUES (2,2,11,1),(1,1,10,1),(3,5,12,1),(4,5,13,1),(5,5,14,1),(6,4,15,1),(7,5,16,1),(8,1,17,1),(9,5,18,1),(10,1,10,2),(11,2,11,2),(12,5,15,2),(13,5,16,2),(14,1,17,2),(15,5,18,2),(16,3,11,3),(17,5,12,3),(18,4,13,3),(19,3,14,3),(20,4,15,3),(21,5,16,3),(22,4,17,3),(23,5,18,3),(24,5,10,4),(25,5,11,4),(26,5,12,4),(27,0,13,4),(28,2,14,4),(29,3,15,4),(30,1,16,4),(31,4,17,4),(32,1,18,4);
 /*!40000 ALTER TABLE `phone_rating` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `user` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `date_of_birth` bigint(20) NOT NULL,
+  `is_female` bit(1) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `user`
@@ -54,4 +105,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-04 13:58:07
+-- Dump completed on 2019-05-04 14:12:34
