@@ -1,11 +1,8 @@
 package tdmu.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tdmu.model.User;
-import tdmu.security.JwtService;
 import tdmu.service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
@@ -42,5 +39,11 @@ public class UserController {
     @RequestMapping(value = "/{username}", method = RequestMethod.GET)
     public User findByUsername(@PathVariable String username) {
         return userService.findByUsername(username);
+    }
+
+    @CrossOrigin
+    @RequestMapping(value = "rating/{userid}/{phoneid}/{score}", method = RequestMethod.POST)
+    public void rating(@PathVariable Long userid, @PathVariable Long phoneid, @PathVariable Long score) {
+        userService.rating(userid, phoneid, score);
     }
 }

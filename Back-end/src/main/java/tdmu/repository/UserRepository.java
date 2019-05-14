@@ -8,4 +8,7 @@ import tdmu.model.User;
 public interface UserRepository extends JpaRepository<User, Long> {
     @Query("SELECT p FROM User p WHERE LOWER(p.username) = LOWER(:username)")
     public User findByUsername(@Param("username") String username);
+
+    @Query("SELECT p FROM User p WHERE id = :id")
+    public User findUserById(@Param("id") Long id);
 }

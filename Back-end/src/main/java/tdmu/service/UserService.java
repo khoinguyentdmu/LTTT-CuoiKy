@@ -5,7 +5,10 @@ import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import tdmu.model.PhoneRating;
 import tdmu.model.User;
+import tdmu.repository.PhoneRatingRepository;
+import tdmu.repository.PhoneRepository;
 import tdmu.repository.UserRepository;
 
 @Service
@@ -14,6 +17,12 @@ public class UserService {
 
     @Autowired
     private UserRepository userRepo;
+
+    @Autowired
+    private PhoneRatingRepository phoneRatingRepo;
+
+    @Autowired
+    private PhoneRepository phoneRepo;
 
     static {
         //User admin = new User(1L, "admin", "admin", "admin", true, 1L, new String[] { "ROLE_ADMIN" });
@@ -61,7 +70,17 @@ public class UserService {
         }
         return false;
     }
+
     public User findByUsername(String username) {
         return userRepo.findByUsername(username);
+    }
+
+    public void rating(Long userid, Long phoneid, Long score) {
+        PhoneRating rating = new PhoneRating();
+        rating.setUser(userRepo.findUserById(userid));
+        rating.setPhone(phoneRepo.findPhoneById(phoneid));
+        rating.setRating(score);
+
+        phoneRatingRepo.save(rating);
     }
 }
