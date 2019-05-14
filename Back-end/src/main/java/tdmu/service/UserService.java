@@ -1,15 +1,15 @@
 package tdmu.service;
 
-import java.util.ArrayList;
-import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import tdmu.model.PhoneRating;
 import tdmu.model.User;
 import tdmu.repository.PhoneRatingRepository;
 import tdmu.repository.PhoneRepository;
 import tdmu.repository.UserRepository;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class UserService {
@@ -73,14 +73,5 @@ public class UserService {
 
     public User findByUsername(String username) {
         return userRepo.findByUsername(username);
-    }
-
-    public void rating(Long userid, Long phoneid, Long score) {
-        PhoneRating rating = new PhoneRating();
-        rating.setUser(userRepo.findUserById(userid));
-        rating.setPhone(phoneRepo.findPhoneById(phoneid));
-        rating.setRating(score);
-
-        phoneRatingRepo.save(rating);
     }
 }

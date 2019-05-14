@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/rs")
-public class RecommendationController {
+    public class RecommendationController {
     @Autowired
     private RecommendationService recommendationService;
 

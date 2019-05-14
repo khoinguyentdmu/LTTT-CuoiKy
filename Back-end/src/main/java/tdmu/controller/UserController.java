@@ -41,9 +41,9 @@ public class UserController {
         return userService.findByUsername(username);
     }
 
-    @CrossOrigin
+    /*@CrossOrigin
     @RequestMapping(value = "rating/{userid}/{phoneid}/{score}", method = RequestMethod.POST)
     public void rating(@PathVariable Long userid, @PathVariable Long phoneid, @PathVariable Long score) {
         userService.rating(userid, phoneid, score);
-    }
+    }*/
 }
