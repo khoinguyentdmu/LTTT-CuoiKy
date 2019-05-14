@@ -34,12 +34,12 @@ public class JwtAuthenticationTokenFilter extends UsernamePasswordAuthentication
                 boolean accountNonExpired = true;
                 boolean credentialsNonExpired = true;
                 boolean accountNonLocked = true;
-                UserDetails userDetail = new User(username, user.getPassword(), enabled, accountNonExpired,
+                /*UserDetails userDetail = new User(username, user.getPassword(), enabled, accountNonExpired,
                         credentialsNonExpired, accountNonLocked, user.getAuthorities());
                 UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetail,
                         null, userDetail.getAuthorities());
                 authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(httpRequest));
-                SecurityContextHolder.getContext().setAuthentication(authentication);
+                SecurityContextHolder.getContext().setAuthentication(authentication);*/
             }
         }
         chain.doFilter(request, response);
