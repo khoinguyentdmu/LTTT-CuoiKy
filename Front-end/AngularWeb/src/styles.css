@@ -510,7 +510,10 @@ body {
 }
 
 /*-----content-grids----*/
-
+.top-3-grids {
+    width: 80%;
+    margin: 0 auto;
+}
 .content-grids {
     width: 80%;
     margin: 0 auto;

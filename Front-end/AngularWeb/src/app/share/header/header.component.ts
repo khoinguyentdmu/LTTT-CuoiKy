@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  private logedon: boolean;
+  constructor() {
+    this.logedon = false;
   }
 
+  ngOnInit() {
+    if (localStorage.getItem('username') !== null) {
+      this.logedon = true;
+    }
+  }
+
+  public logout() {
+    localStorage.removeItem('username');
+    window.location.reload();
+  }
 }
