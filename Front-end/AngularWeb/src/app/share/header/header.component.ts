@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  public logout() {
+  public logout(): void {
     localStorage.removeItem('username');
     window.location.reload();
   }

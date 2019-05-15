@@ -464,7 +464,7 @@ body {
     color: #575757;
 }
 
-.content-grids h4, .content-sidebar h4 {
+.content-grids h4, .content-sidebar h4, .top-3-grids h4 {
     font-family: 'Open Sans', sans-serif;
     color: #575757;
     font-size: 1.5em;

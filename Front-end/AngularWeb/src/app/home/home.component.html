@@ -1,18 +1,19 @@
 <app-header></app-header>
 <!----End-Header---->
 <div class="top-3-grids" *ngIf="this.logedon">
+  <h4>Recommended Phones</h4>
   <div class="section group">
     <div class="grid_1_of_3 images_1_of_3">
-      <a href="single.html"><img src="https://p.w3layouts.com/demos/mobilestore/web/images/grid-img1.jpg"></a>
-      <h3>{{ arrPhones[0].name }}</h3>
+      <a href="single.html"><img src="{{ this.arrPhonePics[0] }}"></a>
+      <h3>{{ this.arrPhoneNames[0] }}</h3>
     </div>
     <div class="grid_1_of_3 images_1_of_3 second">
-      <a href="single.html"><img src="https://p.w3layouts.com/demos/mobilestore/web/images/grid-img2.jpg"></a>
-      <h3>{{ arrPhones[1].name }}</h3>
+      <a href="single.html"><img src="{{ this.arrPhonePics[1] }}"></a>
+      <h3>{{ this.arrPhoneNames[1] }}</h3>
     </div>
     <div class="grid_1_of_3 images_1_of_3 theree">
-      <a href="single.html"><img src="https://p.w3layouts.com/demos/mobilestore/web/images/grid-img3.jpg"></a>
-      <h3>{{ arrPhones[2].name }}</h3>
+      <a href="single.html"><img src="{{ this.arrPhonePics[2] }}"></a>
+      <h3>{{ this.arrPhoneNames[2] }}</h3>
     </div>
   </div>
 </div>
